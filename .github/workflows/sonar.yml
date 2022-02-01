@@ -26,6 +26,6 @@ jobs:
       - name: Start Sonar Analysis
         run: dotnet SonarScanner.MSBuild.dll begin /k:"hefesto84_recyclable_scroll_unity" /o:"hefesto84" /d:sonar.login="77037a2a6dc8c869aca526c2a7d5d4f917415631" /d:sonar.host.url="https://sonarcloud.io"
       - name: Build project
-        run: dotnet build recyclable-scroll-unity.sln
+        run: msbuild recyclable-scroll-unity.sln
       - name: End Sonar Analysis
         run: dotnet SonarScanner.MSBuild.dll end /d:sonar.login="77037a2a6dc8c869aca526c2a7d5d4f917415631"
