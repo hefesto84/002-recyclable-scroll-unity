@@ -22,9 +22,9 @@ jobs:
       - name: Install DOTNET SonarScanner
         run: dotnet tool install --global dotnet-sonarscanner
       - name: Download latest SonarScanner.MSBuild
-        run: Invoke-WebRequest https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.4.1.41282/sonar-scanner-msbuild-5.4.1.41282-netcoreapp2.0.zip
+        run: Invoke-WebRequest -Uri https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.4.1.41282/sonar-scanner-msbuild-5.4.1.41282-netcoreapp2.0.zip
       - name: Unzip SonnarScanner.MSBuild
-        run: Expand-Archive sonar-scanner-msbuild-5.4.1.41282-netcoreapp2.0.zip
+        run: Expand-Archive -Path sonar-scanner-msbuild-5.4.1.41282-netcoreapp2.0.zip
       - name: Start Sonar Analysis
         run: dotnet SonarScanner.MSBuild.dll begin /k:"hefesto84_recyclable_scroll_unity" /o:"hefesto84" /d:sonar.login="77037a2a6dc8c869aca526c2a7d5d4f917415631" /d:sonar.host.url="https://sonarcloud.io"
       - name: Build Project
