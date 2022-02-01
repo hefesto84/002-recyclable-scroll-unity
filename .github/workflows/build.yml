@@ -14,6 +14,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: '[16.4,16.5)'
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
@@ -43,5 +47,5 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"hefesto84_recyclable-scroll-unity" /o:"hefesto84" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build recyclable-scroll-unity.sln
+          msbuild recyclable-scroll-unity.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
