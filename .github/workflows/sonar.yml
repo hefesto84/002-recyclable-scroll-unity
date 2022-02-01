@@ -17,6 +17,8 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Install DOTNET
         run: sudo apt install dotnet-sdk-3.1
+      - name: Setup Unity
+        uses: kuler90/setup-unity@v1  
       - name: Download latest SonarScanner.MSBuild
         run: wget https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.4.1.41282/sonar-scanner-msbuild-5.4.1.41282-netcoreapp2.0.zip
       - name: Unzip SonnarScanner.MSBuild
