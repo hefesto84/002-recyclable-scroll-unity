@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Install DOTNET
-        run: apt install apt-install dotnet-sdk-3.1
+        run: sudo apt install dotnet-sdk-3.1
       - name: Build project
         run: dotnet build recyclable-scroll-unity.sln
     
