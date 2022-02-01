@@ -24,4 +24,4 @@ jobs:
       - name: ls
         run: ls
       - name: Start Sonar Analysis
-        run: dotnet ./sonar-scanner-msbuild-5.4.1.41282-netcoreapp2.0/SonarScanner.MSBuild.dll begin /k:"hefesto84_recyclable_scroll_unity" /o:"hefesto84" /d:sonar.login="77037a2a6dc8c869aca526c2a7d5d4f917415631" /d:sonar.host.url="https://sonarcloud.io"
+        run: dotnet SonarScanner.MSBuild.dll begin /k:"hefesto84_recyclable_scroll_unity" /o:"hefesto84" /d:sonar.login="77037a2a6dc8c869aca526c2a7d5d4f917415631" /d:sonar.host.url="https://sonarcloud.io"
