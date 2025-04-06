@@ -42,7 +42,7 @@ public class Bootstrap : MonoBehaviour
     
     private void HydrateData(int data)
     {
-        if (_itemDataList == null) _itemDataList = new List<ItemData>();
+        _itemDataList ??= new List<ItemData>();
 
         _itemDataList.Clear();
         
